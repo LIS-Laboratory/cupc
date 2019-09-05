@@ -1,11 +1,55 @@
 # cuPC
+cuPC is a CUDA-based parallel implementation of PC-stable algorithm for causal structure learning on GPU. cuPC is developed and maintained by [Learning and Intelligent Systems Laboratory](http://lis.ee.sharif.edu). The main highlights of cuPC are as follows:
+* Easy usage.
+* Compatible with [pcalg](https://cran.r-project.org/web/packages/pcalg/index.html) software.
+* 100X to 10,000X speedup compared to serial implementation on CPU.
 
-cuPC: CUDA-based Parallel PC Algorithm for Causal Structure Learning on GPU
 
-# Source Code
+# Installation
+#### CUDA toolkit
+To install CUDA toolkit please use [this link](https://developer.nvidia.com/cuda-downloads).
 
-Please refer to our lab webpage to download the source code:
-http://lis.ee.sharif.edu/pub/cupc/
+#### R
+```
+sudo echo "deb http://cran.rstudio.com/bin/linux/ubuntu xenial/" | sudo tee -a /etc/apt/sources.list
+gpg --keyserver keyserver.ubuntu.com --recv-key E084DAB9
+gpg -a --export E084DAB9 | sudo apt-key add -
+
+sudo apt update
+sudo apt install r-base r-base-dev
+```
+
+#### Linux dependencies
+```
+sudo apt install libv8-3.14-dev
+sudo apt install libcurl4-openssl-dev
+sudo apt install libgmp3-dev
+```
+
+#### R dependencies
+First, enter R by executing the following command:
+```
+sudo -i R
+```
+
+Now inside the R environment, run the following commands:
+
+```
+install.packages("tictoc")
+source("http://bioconductor.org/biocLite.R")
+biocLite(c("graph", "RBGL", "Rgraphviz"))
+install.packages("pcalg")
+```
+
+### Compile and execute
+
+* Execute "nvcc -O3 --shared -Xcompiler -fPIC -o Skeleton.so cuPC-S.cu" to compile .cu files
+* A test example exists in use_cuPC.R
+* Data_generator.R create gaussian-distributed data
+
+# Original Version
+The original source code which was employed in the following paper is available at our lab webpage [here](http://lis.ee.sharif.edu/pub/cupc/).
+
 
 # Publication
 

@@ -64,10 +64,10 @@ Please cite cuPC in your publications if it helps your research:
 author = {Behrooz Zarebavani and Foad Jafarinejad and Matin Hashemi and Saber Salehkaleybar},
 title = {{cuPC}: CUDA-based Parallel PC Algorithm for Causal Structure Learning on GPU},
 journal = {IEEE Transactions on Parallel and Distributed Systems (TPDS)},
-year = {2019},
-volume = {},
-number = {},
-pages = {}
+year = {2020},
+volume = {31},
+number = {3},
+pages = {530 - 542}
 doi = {10.1109/TPDS.2019.2939126}
 } 
 ```
